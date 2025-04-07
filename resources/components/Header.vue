@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <button class="py-2 px-4 bg-[#6D28D9] rounded-md text-white cursor-pointer hover:opacity-80">
+        <button @click="open" class="py-2 px-4 bg-[#6D28D9] rounded-md text-white cursor-pointer hover:opacity-80">
             Adicionar Tarefa
         </button>
     </div>
@@ -23,4 +23,10 @@
 
 <script setup>
 import ProgressBar from './ProgressBar.vue'
+
+const emit = defineEmits(['openModal'])
+
+function open() {
+    emit('openModal')
+}
 </script>

@@ -3,7 +3,7 @@
     <Sidebar @openModal="openModal = true"/>
 
     <div class="w-full h-screen bg-[#0F172A] text-white">
-      <Header />
+      <Header @openModal="openModal = true" />
 
       <MainContent :tasks="tasks" @openModal="openModal = true" />
     </div>
