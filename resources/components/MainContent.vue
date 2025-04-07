@@ -1,30 +1,6 @@
 <template>
     <main class="w-full h-screen bg-[#0F172A]">
-<!--        <div class="w-full h-16 flex items-center justify-between px-6">-->
-<!--&lt;!&ndash;            <input&ndash;&gt;-->
-<!--&lt;!&ndash;                type="text"&ndash;&gt;-->
-<!--&lt;!&ndash;                class="w-xs bg-[#141E33] py-2 text-[#94A3BB] pl-2 rounded-md border-2 border-[#0F172A]&ndash;&gt;-->
-<!--&lt;!&ndash;        hover:border-[#6D28D9] focus:border-[#6D28D9] outline-none"&ndash;&gt;-->
-<!--&lt;!&ndash;                placeholder="Pesquisar"&ndash;&gt;-->
-<!--&lt;!&ndash;            />&ndash;&gt;-->
 
-<!--&lt;!&ndash;            <div class="w-56">&ndash;&gt;-->
-<!--&lt;!&ndash;                <p class="text-xs font-bold text-[#94A3B8]">Execução (%)</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="flex items-center gap-2">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="w-full h-2 bg-[#141E33] rounded-md">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="w-[40%] h-full bg-[#6D28D9] rounded-md"></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <p class="text-xs font-bold text-[#94A3B8]">5/12</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-
-<!--            <button-->
-<!--                @click="$emit('openModal')"-->
-<!--                class="py-2 px-4 bg-[#6D28D9] rounded-md text-white cursor-pointer hover:opacity-80"-->
-<!--            >-->
-<!--                Adicionar Tarefa-->
-<!--            </button>-->
-<!--        </div>-->
 
         <h2 class="px-6 text-xl font-bold text-[#94A3b8] mt-7">Todas as atividades (0)</h2>
 

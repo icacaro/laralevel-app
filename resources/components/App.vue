@@ -1,16 +1,30 @@
+<!--<template>-->
+<!--  <div class="flex relative">-->
+<!--    <Sidebar @openModal="openModal = true"/>-->
+
+<!--    <div class="w-full h-screen bg-[#0F172A] text-white">-->
+<!--      <Header @openModal="openModal = true" />-->
+
+<!--      <MainContent :tasks="tasks" @openModal="openModal = true" />-->
+<!--    </div>-->
+
+<!--    <TaskModal v-if="openModal" @close="openModal = false" @add="addTask"/>-->
+<!--  </div>-->
+<!--</template>-->
+
 <template>
-  <div class="flex relative">
-    <Sidebar @openModal="openModal = true"/>
+    <div class="flex h-screen ">
+        <Sidebar @openModal="openModal = true"/>
 
-    <div class="w-full h-screen bg-[#0F172A] text-white">
-      <Header @openModal="openModal = true" />
+        <div class="w-full h-full bg-[#0F172A] text-white flex flex-col">
+            <Header @openModal="openModal = true" />
+            <MainContent :tasks="tasks" @openModal="openModal = true" />
+        </div>
 
-      <MainContent :tasks="tasks" @openModal="openModal = true" />
+        <TaskModal v-if="openModal" @close="openModal = false" @add="addTask"/>
     </div>
-
-    <TaskModal v-if="openModal" @close="openModal = false" @add="addTask"/>
-  </div>
 </template>
+
 
 <script setup>
 import { ref } from 'vue'
