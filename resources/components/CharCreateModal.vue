@@ -10,7 +10,7 @@
                         v-model="form.name"
                         type="text"
                         class="w-full px-3 py-2 border rounded-md bg-gray-100 dark:bg-[#0F172A] dark:border-gray-600"
-                        placeholder="Digite o nome do usuário"
+                        placeholder="Digite o nome do personagem"
                         required
                     />
                 </div>
@@ -38,7 +38,7 @@
 <!--                </div>-->
 
                 <div class="mb-4">
-                    <label class="block mb-2 font-semibold">Selecione uma classe</label>
+                    <label class="block mb-2 font-semibold">Selecione uma classe inicial</label>
                     <select
                         v-model="selectedValue"
                         @change="handleChange"
@@ -46,17 +46,18 @@
                     >
                         <option disabled value="">Selecione...</option>
                         <option
-                            v-for="option in options"
-                            :key="option.value"
-                            :value="option.value"
+                            v-for="classe in classes"
+                            :key="classe.value"
+                            :value="classe.value"
                         >
-                            {{ option.text }}
+                            {{ classe.text }}
                         </option>
                     </select>
 
                     <div class="mt-4">
-                        <p><strong>Valor selecionado:</strong> {{ selectedValue }}</p>
                         <p><strong>Texto selecionado:</strong> {{ selectedText }}</p>
+                        <p><strong>Valor selecionado:</strong> {{ selectedValue }}</p>
+                        <p><strong>Descrição:</strong> {{ selectedDescription }}</p>
                     </div>
                 </div>
 
@@ -99,19 +100,32 @@ const form = reactive({
     password: '',
 })
 
-const options = [
-    { text: '⚔️ Guerreiro', value: 'warrior' },
-    { text: '🧙 Mago', value: 'mage' },
-    { text: '🛡️ Paladino', value: 'archer' },
+const classes = [
+    {
+        text: '⚔️ Guerreiro',
+        value: 'guerreiro',
+        description: 'Atributo principal força 💪. Evolui com tarefas físicas como treinos e exercícios.'
+    },
+    {
+        text: '🧙 Mago',
+        value: 'mago',
+        description: 'Atributo principal inteligência 🧠. Evolui com estudos e leitura.'
+    },
+    {
+        text: '🛡️ Paladino',
+        value: 'paladino',
+        description: 'Atributo principal fé 🧘. Evolui com meditação e boas ações.'
+    },
 ]
 
 const selectedValue = ref('')
 const selectedText = ref('')
+const selectedDescription = ref('')
 
-// Atualiza o texto com base no value selecionado
 function handleChange() {
-    const found = options.find(option => option.value === selectedValue.value)
-    selectedText.value = found ? found.text : ''
+    const found = classes.find(classe => classe.value === selectedValue.value)
+    selectedText.value = found?.text || ''
+    selectedDescription.value = found?.description || ''
 }
 
 function submit() {

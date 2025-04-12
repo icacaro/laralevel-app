@@ -9,6 +9,11 @@
             Adicionar tarefa
         </button>
 
+        <button @click="openCharCreateModal"
+                class="py-3 w-[80%] bg-[#6D28D9] rounded-md text-white cursor-pointer hover:opacity-80">
+            Criar Personagem
+        </button>
+
 
         <div class="w-full h-80 px-2">
             <ul class="flex flex-col gap-2">
@@ -23,9 +28,13 @@
 
 
 <script setup>
-const emit = defineEmits(['openModal'])
+const emit = defineEmits(['openModal', 'openCharCreateModal'])
 
 function open() {
     emit('openModal')
+}
+
+function openCharCreateModal() {
+    emit('openCharCreateModal')
 }
 </script>
