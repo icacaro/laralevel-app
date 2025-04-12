@@ -21,6 +21,8 @@
             <MainContent :tasks="tasks" @openModal="openModal = true" />
         </div>
 
+        <CharCreateModal v-if="openUserCreateModal" @close="openUserCreateModal = false"/>
+
         <TaskModal v-if="openModal" @close="openModal = false" @add="addTask"/>
     </div>
 </template>
@@ -32,6 +34,7 @@ import Sidebar from './Sidebar.vue'
 import Header from './Header.vue'
 import MainContent from './MainContent.vue'
 import TaskModal from './TaskModal.vue'
+import CharCreateModal from "./CharCreateModal.vue";
 
 function addTask(task) {
   tasks.value.push({
@@ -41,6 +44,7 @@ function addTask(task) {
 }
 
 const openModal = ref(false)
+const openUserCreateModal = ref(true)
 
 const tasks = ref([
   {
